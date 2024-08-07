@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+    cliente:
+        container_name: "cliente"
+        build:
+            context: .
+            dockerfile: docker/Dockerfile.cliente
+        expose:
+            - "3000"
+        ports:
+            - "3000:3000"
+
+networks:
+    cliente-rails:
+        driver: "bridge"
